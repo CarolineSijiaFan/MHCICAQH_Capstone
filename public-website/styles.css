@@ -68,6 +68,26 @@ p {
     color: var(--text-dark);
 }
 
+/* List Styles */
+ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
 /* Layout Components */
 .container {
     max-width: 1200px;
@@ -81,6 +101,37 @@ p {
 
 .section-alt {
     background: var(--surface);
+}
+
+.breadcrumb-section {
+    padding: 2rem 0;
+}
+
+/* Video Container Styles */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: var(--white);
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.video-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    font-style: italic;
 }
 
 /* Navigation */
@@ -340,7 +391,7 @@ p {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 1rem;
+    left: 2rem;
     top: 0.5rem;
     width: 1rem;
     height: 1rem;
@@ -348,6 +399,7 @@ p {
     border-radius: 50%;
     border: 3px solid var(--white);
     box-shadow: 0 0 0 2px var(--light-blue);
+    transform: translateX(-50%);
 }
 
 /* Team Grid */

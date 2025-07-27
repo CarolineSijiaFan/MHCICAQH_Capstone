@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Attestation - CAQH MHCI Capstone</title>
+    <title>Smarter Attestations - CAQH MHCI Capstone</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -24,16 +24,15 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="fade-in">Smart Attestation</h1>
-            <p class="lead fade-in">Reimagining provider attestations through distributed micro-attestations</p>
+            <h1 class="fade-in">Reimagining Provider Attestations through Distributed Moments of Value</h1>
         </div>
     </section>
 
     <!-- Breadcrumb -->
-    <section class="section">
+    <section class="section breadcrumb-section">
         <div class="container">
             <nav aria-label="breadcrumb">
-                <p><a href="final-solutions.html" class="text-teal">Final Solutions</a> / Smart Attestation</p>
+                <p><a href="final-solutions.html" class="text-teal">Final Solutions</a> / Smarter Attestations</p>
             </nav>
         </div>
     </section>
@@ -43,33 +42,11 @@
         <div class="container">
             <div class="card">
                 <h2 class="text-primary">The Problem</h2>
-                <p class="lead">Attestations are long forms that providers are required to review every 90 days - burdensome, time-consuming, and seen by providers and proxies as a barrier to providing care.</p>
+                <p class="lead">Provider attestations are essential but often viewed as burdensome. Every 90 days, providers must review lengthy forms to update various data fields—such as their practice location, licenses, insurance, and provider information (e.g., NPI)—within CAQH's Provider Data Portal.</p>
                 
-                <div class="mt-4">
-                    <h3 class="text-teal">Current State</h3>
-                    <p>Currently, providers must go into CAQH's Provider Data Portal to attest to many provider data fields, including their practice location, licenses and insurance, provider information (NPI), etc. so that their data can be maintained in insurance plans' directories so patients can find them.</p>
-                    
-                    <div class="card-grid mt-4">
-                        <div class="card">
-                            <h4>📝 Burden on Providers</h4>
-                            <p>Quarterly attestation forms are seen as administrative burden disconnected from patient care</p>
-                        </div>
-                        <div class="card">
-                            <h4>⏰ Time Consuming</h4>
-                            <p>Practice managers and providers spend valuable time on repetitive data validation tasks</p>
-                        </div>
-                        <div class="card">
-                            <h4>🔄 Disconnected Workflows</h4>
-                            <p>Attestation happens separately from daily work, creating friction and reducing engagement</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="text-teal">Research Question</h3>
-                    <p><strong>How might we turn attestation from a compliance task into a moment of mutual value?</strong></p>
-                    <p>We wanted to explore how we could bring value to the attestation experience for providers—both by making it easier and by tying it to things they care about.</p>
-                </div>
+                <p>This process is time-consuming and, for many providers and proxies (e.g., practice managers), a significant barrier to care. Currently, providers must complete attestations so that their information remains accurate and visible in insurance plan directories, enabling patients to find their healthcare providers.</p>
+                
+                <p class="mt-4">We set out to answer the question: <strong class="text-primary">How might we transform attestation from a compliance task into a moment of mutual value for providers and the entire healthcare ecosystem?</strong></p>
             </div>
         </div>
     </section>
@@ -79,171 +56,148 @@
         <div class="container">
             <div class="card">
                 <h2 class="text-primary">Our Solution</h2>
-                <p class="lead">Instead of periodic, manual attestations, we proposed a new distributed model called "micro-attestations", where providers and proxies verify or update their provider information directly in the tools they already use.</p>
+                <p class="lead">Instead of periodic, manual attestations, we propose a new, distributed model called micro-attestations. This allows providers and proxies to verify or update their provider information directly within the tools they already use, seamlessly integrating attestations into their everyday workflows.</p>
                 
                 <div class="mt-4">
                     <h3 class="text-teal">How It Works</h3>
-                    <p>While users are in their existing tools, they have the option to autofill with CAQH. When they log into their CAQH account to autofill, they're simultaneously validating that information, and when they make changes, those are also automatically pushed back to CAQH for approval. This creates a seamless data loop between CAQH and everyday workflows.</p>
+                    <div class="card-grid mt-4">
+                        <div class="card">
+                            <div class="card-icon">🛠️</div>
+                            <h4>While using their existing tools,</h4>
+                            <p>providers can opt to autofill their forms with their CAQH data when renewing licenses, ordering prescription pads, or updating information with health plans.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">🔐</div>
+                            <h4>By logging in to their CAQH account,</h4>
+                            <p>they are simultaneously validating that data, ensuring accuracy and compliance in real-time.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">🔄</div>
+                            <h4>Any changes made</h4>
+                            <p>are automatically pushed back to CAQH and tracked in real-time for seamless data synchronization.</p>
+                        </div>
+                    </div>
+                    <h5 class="text-primary mt-4 text-center">This creates a seamless loop of accurate, up-to-date data between CAQH and providers' everyday workflows.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- In Action Section -->
+    <section class="section">
+        <div class="container">
+            <div class="card">
+                <h2 class="text-primary">Micro-Attestations in Action</h2>
+                <p class="lead">Here is what we think this process can look like in the wild.</p>
+                
+                <p>Imagine you're a provider ordering new prescription pads. Normally, you would have to enter a lot of information—your National Provider Number (NPI), practice location, DEA license, and other details to verify your identity.</p>
+                
+                <p>With CAQH autofill, there's an embedded button on the website (e.g., RxMinutemanPress). Clicking it opens a panel that securely connects to your CAQH data, allowing you to log in and grant just the right amount of information to complete the form.</p>
+                
+                <div class="video-container mt-4">
+                    <video autoplay loop muted playsinline>
+                        <source src="img/micro_login.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">Login demonstration</p>
+                </div>
+                
+                <div class="mt-4">
+                    <p>Once logged in, you select your practice location and hit autofill, instantly populating the form with your details.</p>
                     
-                    <div class="timeline mt-4">
-                        <div class="timeline-item">
-                            <h4>Provider uses existing tool</h4>
-                            <p>Provider is working in their electronic health record, billing system, or other daily workflow tool</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4>CAQH autofill option appears</h4>
-                            <p>Tool offers to autofill form fields with verified CAQH data</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4>Provider authenticates & validates</h4>
-                            <p>Provider logs in to CAQH, simultaneously validating that the data is current and accurate</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4>Changes sync automatically</h4>
-                            <p>Any updates made by the provider are pushed back to CAQH for approval and distribution</p>
-                        </div>
+                    <div class="video-container mt-4">
+                        <video autoplay loop muted playsinline>
+                            <source src="img/micro_autofill.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-caption">Autofill demonstration</p>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <p>After reviewing, if any details (e.g., practice address or phone number) have changed, you can update them directly in the form. The system detects the changes and asks if you'd like to update your CAQH profile.</p>
+                    
+                    <div class="video-container mt-4">
+                        <video autoplay loop muted playsinline>
+                            <source src="img/micro_update.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-caption">Update demonstration</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Key Features -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center mb-4">Key Features</h2>
-            
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-icon">⚡</div>
-                    <h3>Micro-attestation</h3>
-                    <p>Autofill in prescription pads, EHR systems, and browser extensions</p>
-                    <ul class="mt-3">
-                        <li>Real-time data validation</li>
-                        <li>Contextual authentication</li>
-                        <li>Minimal workflow disruption</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <div class="card-icon">🖥️</div>
-                    <h3>Enhanced PDP Experience</h3>
-                    <p>Improved macro-attestation experience in Provider Data Portal</p>
-                    <ul class="mt-3">
-                        <li>Smart pre-filling</li>
-                        <li>Change tracking</li>
-                        <li>Streamlined interface</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <div class="card-icon">🔄</div>
-                    <h3>Seamless Integration</h3>
-                    <p>Works within existing provider workflows and tools</p>
-                    <ul class="mt-3">
-                        <li>API integrations</li>
-                        <li>Browser extensions</li>
-                        <li>EHR partnerships</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <div class="card-icon">📱</div>
-                    <h3>Mobile Optimization</h3>
-                    <p>Access and update data from mobile devices</p>
-                    <ul class="mt-3">
-                        <li>Responsive design</li>
-                        <li>Touch-optimized interface</li>
-                        <li>Offline capability</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
+    <!-- Macro-Attestation Section -->
     <section class="section section-alt">
         <div class="container">
-            <h2 class="text-center mb-4">Benefits</h2>
-            
             <div class="card">
-                <h3 class="text-primary">For Providers</h3>
-                <div class="card-grid mt-3">
-                    <div class="card">
-                        <h4>⏱️ Time Savings</h4>
-                        <p>Reduce attestation time from hours to minutes</p>
-                    </div>
-                    <div class="card">
-                        <h4>🎯 Better Experience</h4>
-                        <p>Attestation becomes helpful rather than burdensome</p>
-                    </div>
-                    <div class="card">
-                        <h4>🔗 Integrated Workflow</h4>
-                        <p>Data validation happens naturally within existing tools</p>
-                    </div>
+                <h2 class="text-primary">Macro-Attestation: The Final Review</h2>
+                <p>You can then review the updates either right away or on your own time in the CAQH Provider Data Portal. Instead of reviewing every individual field like traditional attestations, you'll see a full paper trail—tracking what updates were made, where, and when.</p>
+                
+                <div class="video-container mt-4">
+                    <video autoplay loop muted playsinline>
+                        <source src="img/macro_review.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">Macro-review demonstration</p>
+                </div>
+                
+                <p class="mt-4">You'll be able to quickly approve or reject updates, then attest immediately, knowing your information is fresh and accurate, without needing to manually check every field.</p>
+                
+                <div class="video-container mt-4">
+                    <video autoplay loop muted playsinline>
+                        <source src="img/macro_attest.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">Macro-attestation demonstration</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="card mt-4">
-                <h3 class="text-primary">For CAQH</h3>
-                <div class="card-grid mt-3">
-                    <div class="card">
-                        <h4>📊 Higher Data Quality</h4>
-                        <p>More frequent, context-aware data validation</p>
+    <!-- Looking Ahead Section -->
+    <section class="section">
+        <div class="container">
+            <div class="card">
+                <h2 class="text-primary">Looking Ahead</h2>
+                <p>Here is our proposed implementation roadmap:</p>
+                
+                <div class="timeline mt-4">
+                    <div class="timeline-item">
+                        <h4>Now</h4>
+                        <p>Pilot the browser extension with small practices to evaluate micro-attestations in real workflows.</p>
                     </div>
-                    <div class="card">
-                        <h4>📈 Increased Engagement</h4>
-                        <p>Transform from burden to valuable service</p>
+                    <div class="timeline-item">
+                        <h4>Next</h4>
+                        <p>Establish commercial partnerships and launch embedded micro-attestation flows in third-party platforms.</p>
                     </div>
-                    <div class="card">
-                        <h4>🎯 Competitive Advantage</h4>
-                        <p>Position as enabler rather than compliance requirement</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mt-4">
-                <h3 class="text-primary">For Healthcare Ecosystem</h3>
-                <div class="card-grid mt-3">
-                    <div class="card">
-                        <h4>🎯 Improved Accuracy</h4>
-                        <p>Real-time updates ensure directory accuracy</p>
-                    </div>
-                    <div class="card">
-                        <h4>⚡ Faster Updates</h4>
-                        <p>Changes propagate immediately across the system</p>
-                    </div>
-                    <div class="card">
-                        <h4>💰 Cost Reduction</h4>
-                        <p>Reduced administrative overhead across the industry</p>
+                    <div class="timeline-item">
+                        <h4>Later</h4>
+                        <p>Position CAQH as a secure OAuth provider to enable seamless, trusted data sharing across the ecosystem.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Implementation -->
-    <section class="section">
+    <!-- OAuth Section -->
+    <section class="section section-alt">
         <div class="container">
-            <h2 class="text-center mb-4">Implementation Approach</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h4>Phase 1: Pilot Integration</h4>
-                    <p>Partner with 3-5 EHR vendors and practice management systems for initial micro-attestation pilots</p>
+            <div class="card">
+                <h2 class="text-primary">A Note on OAuth</h2>
+                <p class="lead">The future of data sharing in healthcare</h2>
+                <div class="text-center mt-4 mb-4">
+                    <img src="img/caqh-login-button.png" alt="Log in with CAQH button" style="max-width: 300px; height: auto;">
                 </div>
-                <div class="timeline-item">
-                    <h4>Phase 2: Browser Extension</h4>
-                    <p>Launch CAQH browser extension for web-based forms and applications</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Phase 3: API Ecosystem</h4>
-                    <p>Expand API integrations to include major healthcare software platforms</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Phase 4: Industry Standard</h4>
-                    <p>Establish micro-attestation as standard practice across healthcare technology stack</p>
-                </div>
+                <p>By becoming an OAuth provider, CAQH has the potential to transform the healthcare industry. Providers could log into websites across the healthcare ecosystem (e.g., Zocdoc, UpToDate, Epic, Walgreens, UPMC) using their CAQH account.</p>
+                
+                <p>This would enable automatic and secure data exchange for everything related to provider information, streamlining workflows and potentially eliminating the need for some forms entirely.</p>
+                
+                <p>In this vision, CAQH becomes the identity layer for the healthcare workforce, serving as the trusted source of truth for administrative data, enhancing efficiency across the healthcare ecosystem.</p>
+                
+                <p><strong>This would position CAQH as indispensable, empowering health plans, providers, and the broader healthcare system with accurate, real-time data.</strong></p>
             </div>
         </div>
     </section>
@@ -252,7 +206,7 @@
     <section class="section section-alt">
         <div class="container text-center">
             <h2>Explore More Solutions</h2>
-            <p class="lead mb-4">See how Smart Attestation connects with our other solutions to transform the entire data stream</p>
+            <p class="lead mb-4">See how Smarter Attestations connects with our other solutions to transform the entire data stream</p>
             <div class="mt-4">
                 <a href="psv.html" class="btn mr-3">Primary Source Verification</a>
                 <a href="data-analysis.html" class="btn-outline btn">Data Analysis</a>

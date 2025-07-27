@@ -209,7 +209,7 @@ function animateNumber(element) {
     if (number >= 1000000) {
       element.textContent =
         (current / 1000000).toFixed(1) + "M" + suffix.replace(/[\d.M]/g, "");
-    } else if (number >= 1000) {
+    } else if (number >= 10000) {
       element.textContent =
         (current / 1000).toFixed(1) + "K" + suffix.replace(/[\d.K]/g, "");
     } else {

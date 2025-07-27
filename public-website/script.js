@@ -209,9 +209,11 @@ function animateNumber(element) {
 
     let formattedNumber;
     if (number >= 1000000) {
-      formattedNumber = (current / 1000000).toFixed(1) + "M" + suffix.replace(/[\d.M]/g, "");
-    } else if (number >= 1000) {
-      formattedNumber = (current / 1000).toFixed(1) + "K" + suffix.replace(/[\d.K]/g, "");
+      element.textContent =
+        (current / 1000000).toFixed(1) + "M" + suffix.replace(/[\d.M]/g, "");
+    } else if (number >= 10000) {
+      element.textContent =
+        (current / 1000).toFixed(1) + "K" + suffix.replace(/[\d.K]/g, "");
     } else {
       formattedNumber = Math.floor(current) + suffix.replace(/[\d]/g, "");
     }

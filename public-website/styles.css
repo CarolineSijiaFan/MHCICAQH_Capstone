@@ -182,6 +182,53 @@ ol li {
     background: var(--surface);
 }
 
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+    background: var(--surface);
+    color: var(--dark-blue);
+}
+
 /* Hero Section */
 .hero {
     background: var(--gradient-primary);
@@ -733,7 +780,7 @@ ol li {
 .mb-4 { margin-bottom: 2rem; }
 
 .fade-in {
-    animation: fadeIn 0.8s ease-in-out;
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
 @keyframes fadeIn {

@@ -72,14 +72,17 @@ function initSmoothScrolling() {
  */
 function initFadeInAnimations() {
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
+    threshold: 0.15,
+    rootMargin: "0px 0px -100px 0px",
   };
 
   const observer = new IntersectionObserver(function (entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("fade-in");
+        // Add a small delay to prevent the flash
+        setTimeout(() => {
+          entry.target.classList.add("fade-in");
+        }, 50);
         observer.unobserve(entry.target);
       }
     });
@@ -90,6 +93,9 @@ function initFadeInAnimations() {
     ".card, .timeline-item, .stat-item, .team-member"
   );
   elementsToAnimate.forEach((element) => {
+    // Ensure elements start with opacity 0
+    element.style.opacity = "0";
+    element.style.transform = "translateY(20px)";
     observer.observe(element);
   });
 }
@@ -210,6 +216,11 @@ function animateNumber(element) {
     number = parseInt(text.replace(/[^\d]/g, ''));
     suffix = text.replace(/[\d]/g, '');
     format = 'comma';
+  } else if (text.includes('$')) {
+    // Handle dollar amounts (e.g., "$100M+")
+    number = parseFloat(text.replace(/[^\d.]/g, '')) * 1000000;
+    suffix = text.replace(/[\d.]/g, '');
+    format = 'dollars';
   } else {
     // Handle simple numbers
     number = parseInt(text.replace(/[^\d]/g, ''));
@@ -239,6 +250,8 @@ function animateNumber(element) {
       formattedNumber = (current / 1000).toFixed(1) + "K+";
     } else if (format === 'comma') {
       formattedNumber = Math.floor(current).toLocaleString() + suffix;
+    } else if (format === 'dollars') {
+      formattedNumber = "$" + (current / 1000000).toFixed(0) + "M+";
     } else {
       formattedNumber = Math.floor(current) + suffix;
     }

@@ -196,7 +196,7 @@ function animateNumber(element) {
 
   if (isNaN(number)) return;
 
-  const duration = 2000;
+  const duration = 1000;
   const step = number / (duration / 16);
   let current = 0;
 

@@ -64,7 +64,7 @@ p {
 
 .lead {
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 700;
     color: var(--text-dark);
 }
 
@@ -189,6 +189,45 @@ ol li {
     text-align: center;
     padding: 8rem 0 5rem;
     margin-top: 80px;
+    position: relative;
+}
+
+/* Hero Section - Index Page Only */
+.index-page .hero {
+    background: var(--gradient-primary), url('../img/idex_hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.index-page .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/idex_hero.jpg') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.index-page .hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Improve line breaks for index page hero text */
+.index-page .hero h1 {
+    max-width: 900px;
+    margin: 0 auto 1rem;
+    line-height: 1.1;
+}
+
+.index-page .hero .lead {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.4;
 }
 
 .hero h1 {
@@ -220,6 +259,22 @@ ol li {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+/* Force 2x2 grid for sections with exactly 4 cards */
+.card-grid.four-cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Make 2x2 grid responsive - switch to single column on small screens */
+@media (max-width: 768px) {
+    .card-grid.four-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .card-icon {
@@ -344,12 +399,20 @@ ol li {
     font-weight: 500;
 }
 
+/* Testimonials Grid */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 /* Testimonial */
 .testimonial {
     background: var(--white);
     border-left: 4px solid var(--light-blue);
     padding: 2rem;
-    margin: 2rem 0;
+    margin: 0;
     border-radius: 0.5rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
@@ -405,19 +468,88 @@ ol li {
 /* Team Grid */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustments for team grid */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
 }
 
 .team-member {
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
 .team-member h4 {
     color: var(--dark-blue);
     margin-bottom: 0.5rem;
+}
+
+.team-role {
+    color: var(--light-blue);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.team-background {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.team-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    margin: 0 auto 1rem;
+    display: block;
+    border: 3px solid var(--surface);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    color: var(--dark-blue);
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: var(--light-blue);
 }
 
 /* Footer */

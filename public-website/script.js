@@ -190,13 +190,36 @@ function initStatsAnimation() {
  */
 function animateNumber(element) {
   const text = element.textContent;
-  const hasDollarSign = text.includes('$');
-  const number = parseInt(text.replace(/[^\d]/g, ""));
-  const suffix = text.replace(/[\d]/g, "").replace('$', '');
+  const originalText = text;
+  
+  // Parse the original number format
+  let number, suffix, format;
+  
+  if (text.includes('M+')) {
+    // Handle millions (e.g., "4.8M+")
+    number = parseFloat(text.replace(/[^\d.]/g, '')) * 1000000;
+    suffix = 'M+';
+    format = 'millions';
+  } else if (text.includes('K+')) {
+    // Handle thousands (e.g., "1.0K+")
+    number = parseFloat(text.replace(/[^\d.]/g, '')) * 1000;
+    suffix = 'K+';
+    format = 'thousands';
+  } else if (text.includes(',')) {
+    // Handle comma-separated numbers (e.g., "1,000+")
+    number = parseInt(text.replace(/[^\d]/g, ''));
+    suffix = text.replace(/[\d]/g, '');
+    format = 'comma';
+  } else {
+    // Handle simple numbers
+    number = parseInt(text.replace(/[^\d]/g, ''));
+    suffix = text.replace(/[\d]/g, '');
+    format = 'simple';
+  }
 
   if (isNaN(number)) return;
 
-  const duration = 1000;
+  const duration = 1500;
   const step = number / (duration / 16);
   let current = 0;
 
@@ -205,23 +228,22 @@ function animateNumber(element) {
     if (current >= number) {
       current = number;
       clearInterval(timer);
+      element.textContent = originalText; // Restore original text
+      return;
     }
 
     let formattedNumber;
-    if (number >= 1000000) {
-      formattedNumber = (current / 1000000).toFixed(1) + "M" + suffix.replace(/[\d.M]/g, "");
-    } else if (number >= 1000) {
-      formattedNumber = (current / 1000).toFixed(1) + "K" + suffix.replace(/[\d.K]/g, "");
+    if (format === 'millions') {
+      formattedNumber = (current / 1000000).toFixed(1) + "M+";
+    } else if (format === 'thousands') {
+      formattedNumber = (current / 1000).toFixed(1) + "K+";
+    } else if (format === 'comma') {
+      formattedNumber = Math.floor(current).toLocaleString() + suffix;
     } else {
-      formattedNumber = Math.floor(current) + suffix.replace(/[\d]/g, "");
+      formattedNumber = Math.floor(current) + suffix;
     }
 
-    // Preserve dollar sign position
-    if (hasDollarSign) {
-      element.textContent = "$" + formattedNumber;
-    } else {
-      element.textContent = formattedNumber;
-    }
+    element.textContent = formattedNumber;
   }, 16);
 }
 

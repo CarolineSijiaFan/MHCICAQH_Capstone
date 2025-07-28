@@ -149,9 +149,10 @@ ol li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    height: 80px;
 }
 
 .logo {
@@ -159,12 +160,18 @@ ol li {
     font-weight: 700;
     color: var(--dark-blue);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 40px;
 }
 
 .nav-menu {
     display: flex;
     gap: 2rem;
     list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
@@ -174,6 +181,9 @@ ol li {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    height: 40px;
 }
 
 .nav-link:hover,
@@ -185,6 +195,8 @@ ol li {
 /* Dropdown Menu */
 .dropdown {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .dropdown-menu {

@@ -673,6 +673,11 @@ ol li {
     color: var(--light-blue);
 }
 
+/* Hide email buttons on about page */
+.social-icon[href^="mailto:"] {
+    display: none;
+}
+
 /* Footer */
 .footer {
     background: var(--text-dark);

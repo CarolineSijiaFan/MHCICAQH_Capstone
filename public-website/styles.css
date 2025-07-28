@@ -381,22 +381,46 @@ ol li {
     text-align: center;
 }
 
+.stats-section {
+    padding: 2rem 0;
+    margin: 2rem 0;
+}
+
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem 1rem;
 }
 
 .stat-item h3 {
     font-size: 3rem;
+    font-weight: 700;
     color: var(--dark-blue);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+    line-height: 1;
 }
 
-.stat-item p {
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 600;
     color: var(--text-dark);
-    font-weight: 500;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.stat-description {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.4;
+    opacity: 0.8;
 }
 
 /* Testimonials Grid */
@@ -500,6 +524,31 @@ ol li {
     height: 100%;
 }
 
+/* Advisor specific styling */
+.advisor-card {
+    text-align: left;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.advisor-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.advisor-card h4 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.advisor-card .team-social {
+    margin-top: auto;
+    justify-content: flex-start;
+    padding-top: 0.5rem;
+}
+
 .team-member h4 {
     color: var(--dark-blue);
     margin-bottom: 0.5rem;
@@ -592,6 +641,15 @@ ol li {
     
     .card-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 2.5rem;
     }
     
     .timeline::before {
